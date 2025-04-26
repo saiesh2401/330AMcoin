@@ -3,13 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Arial', 'Helvetica', sans-serif;
+  --font-mono: 'Courier New', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +17,29 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 4px #f5d0fe,
+      0 0 8px #d8b4fe;
+  }
+  50% {
+    text-shadow:
+      0 0 6px #f0abfc,
+      0 0 14px #c084fc;
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+  color: #f3e8ff;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "LegoBrix";
+  src: url("/fonts/LegoBrix.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
